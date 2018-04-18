@@ -65,4 +65,20 @@ public class HystrixConfig {
 
         };
     }
+
+    @Bean
+    public FallbackProvider problemSubmissionServiceFallbackProvider() {
+        return new FallbackProvider() {
+            @Override
+            public String getRoute() {
+                return "problemSubmissionService";
+            }
+
+            @Override
+            public ClientHttpResponse fallbackResponse(String route, Throwable cause) {
+                return errorResponse;
+            }
+
+        };
+    }
 }

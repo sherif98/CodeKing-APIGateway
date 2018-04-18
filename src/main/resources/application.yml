@@ -4,9 +4,13 @@ zuul:
   ignoredServices: '*'
   prefix: /api
   routes:
-    test:
+    user:
       path: /user/**
       serviceId: userService
+      strip-prefix: false
+    submission:
+      path: /submission/**
+      serviceId: problemSubmissionService
       strip-prefix: false
   endpoints:
     routes:
