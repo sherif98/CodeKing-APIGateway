@@ -12,14 +12,11 @@ zuul:
       path: /submission/**
       serviceId: problemSubmissionService
       strip-prefix: false
-  endpoints:
-    routes:
-      sensitive: false
-    trace:
-      sensitive: false
 
 
 eureka:
   client:
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
-      default-zone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
