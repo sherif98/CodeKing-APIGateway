@@ -81,4 +81,20 @@ public class HystrixConfig {
 
         };
     }
+
+    @Bean
+    public FallbackProvider gamificationServiceFallbackProvider() {
+        return new FallbackProvider() {
+            @Override
+            public String getRoute() {
+                return "gamificationService";
+            }
+
+            @Override
+            public ClientHttpResponse fallbackResponse(String route, Throwable cause) {
+                return errorResponse;
+            }
+
+        };
+    }
 }

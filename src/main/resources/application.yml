@@ -12,6 +12,10 @@ zuul:
       path: /submission/**
       serviceId: problemSubmissionService
       strip-prefix: false
+    leaderboard:
+      path: /leaderboard/**
+      serviceId: gamificationService
+      strip-prefix: false
 
 
 eureka:
