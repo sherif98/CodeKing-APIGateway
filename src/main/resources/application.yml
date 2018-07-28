@@ -17,6 +17,16 @@ zuul:
       serviceId: gamificationService
       strip-prefix: false
 
+hystrix:
+  command:
+    problemSubmissionService:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+problemSubmissionService:
+  ribbon:
+    ReadTimeout: 10000
 
 eureka:
   client:
