@@ -16,6 +16,7 @@ zuul:
       path: /leaderboard/**
       serviceId: gamificationService
       strip-prefix: false
+  sensitive-headers: Cookie, Set-Cookie
 
 hystrix:
   command:
